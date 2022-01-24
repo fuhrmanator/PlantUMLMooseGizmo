@@ -4,6 +4,12 @@ Class {
 	#category : #BaselineOfPUMooseGizmo
 }
 
+{ #category : #'as yet unclassified' }
+BaselineOfPUMooseGizmo >> badConfig [
+
+	Warning signal: 'This version requires Pharo/Moose 9'.
+]
+
 { #category : #baselines }
 BaselineOfPUMooseGizmo >> baseline: spec [
 
@@ -22,8 +28,8 @@ BaselineOfPUMooseGizmo >> baseline: spec [
 				 ].
 		spec 
 			for: #('pharo8.x' 'pharo7.x' 'pharo6.x' 'pharo5.x' 'pharo4.x' 'pharo3.x')
-			do: [ UIManager default inform: 'This version requires Pharo/Moose 9' ]
-			]
+			do: [ self badConfig ]
+	]
 ]
 
 { #category : #'as yet unclassified' }
