@@ -1,6 +1,6 @@
 Class {
 	#name : #BaselineOfPUMooseGizmo,
-	#superclass : #Object,
+	#superclass : #BaselineOf,
 	#category : #BaselineOfPUMooseGizmo
 }
 
