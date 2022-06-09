@@ -15,7 +15,7 @@ BaselineOfPUMooseGizmo >> baseline: spec [
 
 	<baseline>
 	spec for: #common do: [ 
-		spec for: #'pharo9.x' do: [ 
+		spec for: #(#'pharo9.x' #'pharo10.x') do: [ 
 			"Dependencies"
 			spec
 				baseline: 'PlantUMLBridge'
