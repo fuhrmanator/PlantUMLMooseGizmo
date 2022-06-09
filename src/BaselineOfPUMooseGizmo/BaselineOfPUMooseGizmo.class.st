@@ -14,9 +14,15 @@ BaselineOfPUMooseGizmo >> badConfig [
 BaselineOfPUMooseGizmo >> baseline: spec [
 
 	<baseline>
-	spec for: #common do: [ 
-		spec "for: #(#'pharo9.x' #'pharo10.x')" do: [ 
+	spec
+		for: #common
+		do: [
 			"Dependencies"
+			spec
+				for:
+				#( 'pharo8.x' 'pharo7.x' 'pharo6.x' 'pharo5.x' 'pharo4.x'
+				   'pharo3.x' )
+				do: [ self badConfig ].
 			spec
 				baseline: 'PlantUMLBridge'
 				with: [ 
@@ -25,12 +31,7 @@ BaselineOfPUMooseGizmo >> baseline: spec [
 			spec
 				package: 'PUMooseGizmo';
 				package: 'PUMooseGizmo-Tests'
-				with: [ spec requires: #( 'PUMooseGizmo' ) ] ].
-		spec
-			for:
-			#( 'pharo8.x' 'pharo7.x' 'pharo6.x' 'pharo5.x' 'pharo4.x'
-			   'pharo3.x' )
-			do: [ self badConfig ] ]
+				with: [ spec requires: #( 'PUMooseGizmo' ) ] ]
 ]
 
 { #category : #'as yet unclassified' }
