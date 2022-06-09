@@ -28,8 +28,8 @@ BaselineOfPUMooseGizmo >> baseline: spec [
 				with: [ spec requires: #( 'PUMooseGizmo' ) ] ].
 		spec
 			for:
-			#( 'pharo8.x' 'pharo7.x' 'pharo6.x' 'pharo5.x' 'pharo4.x'
-			   'pharo3.x' )
+			#( #'pharo10.x' #'pharo8.x' #'pharo7.x' #'pharo6.x' #'pharo5.x' #'pharo4.x'
+			   #'pharo3.x' )
 			do: [ self badConfig ] ]
 ]
 
