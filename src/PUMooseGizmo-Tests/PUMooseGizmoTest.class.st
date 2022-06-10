@@ -3,10 +3,9 @@ A PUGizmoForMooseTest is a test class for testing the behavior of PUGizmoForMoos
 "
 Class {
 	#name : #PUMooseGizmoTest,
-	#superclass : #SpecTestCase,
+	#superclass : #SpSpecTest,
 	#instVars : [
-		'models',
-		'presenter'
+		'models'
 	],
 	#category : #'PUMooseGizmo-Tests'
 }

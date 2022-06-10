@@ -1,5 +1,5 @@
 Extension { #name : #FamixTClass }
 
 { #category : #'*PUMooseGizmo' }
-FamixTClass >> printOnGizmo: aStream [ aStream << 'class "'
+FamixTClass >> printOnGizmo: aStream [	self isInterface		ifTrue: [ aStream << 'interface "' ]		ifFalse: [ aStream << 'class "' ]
 ]
