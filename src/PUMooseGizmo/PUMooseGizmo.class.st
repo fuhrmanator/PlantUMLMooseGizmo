@@ -45,8 +45,8 @@ PUMooseGizmo class >> creatorsForMooseClass: mClass [
 	^ creators flattened
 ]
 
-{ #category : #specs }
-PUMooseGizmo class >> defaultSpec [
+{ #category : #layout }
+PUMooseGizmo class >> defaultLayout [
 
 	^ SpPanedLayout newHorizontal
 		  positionOfSlider: 60 percent;
@@ -95,9 +95,10 @@ PUMooseGizmo class >> defaultSpec [
 
 { #category : #examples }
 PUMooseGizmo class >> open [
+
 	<example>
 	<mooseTool: #'PlantUML Gizmo'>
-	self new openWithSpec
+	self new open
 ]
 
 { #category : #'as yet unclassified' }
@@ -362,7 +363,7 @@ PUMooseGizmo >> initializeTables [
 				width: 20;
 				yourself);
 		addColumn:
-			((SpImageTableColumn evaluated: #mooseIcon)
+			((SpImageTableColumn evaluated: [:m | MooseIcons mooseIcon])
 				width: 20;
 				yourself);
 		addColumn: (SpStringTableColumn evaluated: #fullPrintString).
@@ -379,7 +380,7 @@ PUMooseGizmo >> initializeTables [
 				width: 20;
 				yourself);
 		addColumn:
-			((SpImageTableColumn evaluated: #mooseIcon)
+			((SpImageTableColumn evaluated: [:m | MooseIcons mooseIcon])
 				width: 20;
 				yourself);
 		addColumn: (SpStringTableColumn evaluated: #name)
@@ -393,7 +394,7 @@ PUMooseGizmo >> initializeWidgets [
 	modelList
 		items: MooseModel root allModels;
 		display: [ :item | item name ];
-		displayIcon: [ :item | item mooseIcon ];
+		displayIcon: [ :item | MooseIcons mooseIcon ];
 		sortingBlock: [ :a :b | a name < b name ].
 	filter := self newTextInput placeholder: 'each isStub'.
 	getTheDiagramButton := self newButton disable
