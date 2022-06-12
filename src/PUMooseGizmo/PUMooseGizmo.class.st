@@ -239,6 +239,8 @@ PUMooseGizmo class >> printInheritanceWithClass: aClass withStream: aStream [
 PUMooseGizmo class >> printMethodsWithClass: aClass withStream: aStream [
 	aClass methods
 		do: [ :method | 
+			(method isAbstract) ifTrue: [ aStream << '{abstract} ' ].
+			(method isClassSide) ifTrue: [ aStream << '{static} ' ].
 			aStream
 				<< method name;
 				<< '()';
@@ -248,6 +250,7 @@ PUMooseGizmo class >> printMethodsWithClass: aClass withStream: aStream [
 { #category : #printing }
 PUMooseGizmo class >> printNameWithClass: aClass withStream: aStream [
 	"aClass printOnGizmo: aStream."
+	(aClass isAbstract) ifTrue: [ aStream << 'abstract ' ].
 	((aClass class selectors includes: #isInterface)
 		and: [ aClass isInterface ])
 		ifTrue: [ aStream << 'interface "' ]
